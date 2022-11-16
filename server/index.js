@@ -96,7 +96,7 @@ app.delete('/deleteTodo/:id', async (req, res) => {
 
     }
 })
-app.get('/',(req,res)=>{
+app.get('/todosample',(req,res)=>{
     res.send("welcome")
 })
 app.listen(PORT, () => {

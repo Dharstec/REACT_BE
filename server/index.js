@@ -96,6 +96,9 @@ app.delete('/deleteTodo/:id', async (req, res) => {
 
     }
 })
+app.get('/',(req,res)=>{
+    res.send("welcome")
+})
 app.listen(PORT, () => {
     console.log(`server run succesfully at ${PORT}`);
 })

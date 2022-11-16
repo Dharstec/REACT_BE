@@ -6,7 +6,6 @@ const app = express();
 //middleware
 app.use(cors());
 app.use(express.json());
-PORT = 5000;
 const db = async (query) => {
     try {
         await pool.connect();
@@ -99,6 +98,10 @@ app.delete('/deleteTodo/:id', async (req, res) => {
 app.get('/todosample',(req,res)=>{
     res.send("welcome")
 })
-app.listen(PORT, () => {
-    console.log(`server run succesfully at ${PORT}`);
-})
+// app.listen(process.env.PORT, () => {
+//     console.log(`server run succesfully at ${PORT}`);
+// })
+
+app.listen(process.env.PORT || 5000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
